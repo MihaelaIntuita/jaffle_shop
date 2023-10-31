@@ -1,7 +1,3 @@
-{{ config (
-    materialized="table"
-)}}
-
 with customers as (
 
     select
@@ -9,7 +5,7 @@ with customers as (
         first_name,
         last_name
 
-    from raw.jaffle_shop.customers
+    from mmamic.customers
 
 ),
 
@@ -21,7 +17,7 @@ orders as (
         order_date,
         status
 
-    from raw.jaffle_shop.orders
+    from mmamic.orders
 
 ),
 
@@ -39,7 +35,6 @@ customer_orders as (
     group by 1
 
 ),
-
 
 final as (
 
