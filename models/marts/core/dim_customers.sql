@@ -1,4 +1,4 @@
--- dim_customers.sql
+
 WITH customers AS (
     SELECT * FROM {{ ref('stg_customers') }}
 ),
