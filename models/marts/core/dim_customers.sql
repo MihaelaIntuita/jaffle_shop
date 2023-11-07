@@ -1,25 +1,18 @@
 with customers as (
 
-    select
-        id as customer_id,
-        first_name,
-        last_name
-
-    from mmamic.customers
+    select * from {{ ref ('stg_customers') }}
 
 ),
 
 orders as (
-
     select
         id as order_id,
         user_id as customer_id,
         order_date,
         status
-
-    from mmamic.orders
-
+    from {{ ref('stg_orders') }}
 ),
+
 
 customer_orders as (
 
