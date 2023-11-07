@@ -5,14 +5,9 @@ with customers as (
 ),
 
 orders as (
-    select
-        id as order_id,
-        user_id as customer_id,
-        order_date,
-        status
-    from {{ ref('stg_orders') }}
-),
 
+    select * from {{ ref ('stg_orders') }}
+),
 
 customer_orders as (
 
