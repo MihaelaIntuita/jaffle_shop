@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: mmamic
+    database: training_dev
+    schema: mmamic
+    tables:
+      - name: customers
+      - name: orders
+      - name: payment

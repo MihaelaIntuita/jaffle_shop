@@ -1,6 +1,6 @@
 with 
 source as (
-    select * from mmamic.orders
+    select * from {{source('mmamic', 'orders') }}
 ),
 staged as (
     select
