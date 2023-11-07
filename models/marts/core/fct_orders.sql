@@ -6,4 +6,4 @@ WITH fct_orders AS (
   FROM {{ ref('stg_payments') }}
 )
 SELECT *
-FROM fct_orders;
+FROM fct_orders
