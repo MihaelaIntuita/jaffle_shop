@@ -1,4 +1,8 @@
-WITH stg_payments AS (
+WITH source AS(
+    select * from {{ source ('mmamic', 'payment')}}
+),
+
+staged as( 
     SELECT
         id as payment_id,
         orderid as order_id,
@@ -7,7 +11,8 @@ WITH stg_payments AS (
         amount / 100 as amount,  
         created as created_at,
         _batched_at
-    FROM mmamic.payment
+    FROM source
 )
-SELECT * FROM stg_payments
+SELECT * FROM staged
+
 
