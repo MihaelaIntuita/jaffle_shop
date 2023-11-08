@@ -6,16 +6,21 @@ sources:
     schema: mmamic
     tables:
       - name: payment 
+
       - name: customers
+        description: the raw customers' data
         columns:
           - name: id
+            description: primary key
             tests:
             - unique
             - not_null
                 
       - name: orders
+        description: the raw orders' data
         columns:
           - name: id
+            description: primary key 
             tests:
             - unique
             - not_null
